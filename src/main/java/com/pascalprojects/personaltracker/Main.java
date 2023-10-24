@@ -127,7 +127,7 @@ public class Main extends Application {
      * @param pBarchart the bar chart to add the data to
      * @return the bar chart with the data added
      *
-     * TODO: Add the data to a database and read the data from the database
+     * TODO: Add the data to a database running on a raspberry pi and read the data from the database
      */
     public BarChart<String, Number> addData(BarChart<String, Number> pBarchart) {
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();
