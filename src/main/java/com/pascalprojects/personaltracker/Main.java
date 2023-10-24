@@ -63,7 +63,8 @@ public class Main extends Application {
         });
 
         scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
-            if (key.getCode().toString().equals("S")) {tds.showAndWait();
+            if (key.getCode().toString().equals("S")) {
+                tds.showAndWait();
                 if (tds.getResult() != null) {
                     addSleepToday(tds.getResult(), barChart);
                 }
@@ -79,7 +80,8 @@ public class Main extends Application {
 
     /**
      * Adds the amount of water drank today to the bar chart
-     * @param pWater the amount of water drank today
+     *
+     * @param pWater    the amount of water drank today
      * @param pBarChart the bar chart to add the data to
      */
     public void addWaterToday(String pWater, BarChart<String, Number> pBarChart) {
@@ -91,7 +93,8 @@ public class Main extends Application {
 
     /**
      * Adds the amount of sleep today to the bar chart
-     * @param pSleep the amount of sleep today
+     *
+     * @param pSleep    the amount of sleep today
      * @param pBarChart the bar chart to add the data to
      */
     public void addSleepToday(String pSleep, BarChart<String, Number> pBarChart) {
@@ -103,6 +106,7 @@ public class Main extends Application {
 
     /**
      * Creates the bar chart
+     *
      * @return the bar chart
      */
     public BarChart<String, Number> createChart() {
@@ -124,12 +128,12 @@ public class Main extends Application {
 
     /**
      * Adds the data to the bar chart
+     *
      * @param pBarchart the bar chart to add the data to
      * @return the bar chart with the data added
-     *
-     * TODO: Add the data to a database running on a raspberry pi and read the data from the database
      */
     public BarChart<String, Number> addData(BarChart<String, Number> pBarchart) {
+        // TODO: Add the data to a database running on a raspberry pi and read the data from the database
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();
         series1.setName("Hours of sleep");
         series1.getData().add(new XYChart.Data<>("Monday", 8));
@@ -157,6 +161,7 @@ public class Main extends Application {
 
     /**
      * Launches the application
+     *
      * @param args the arguments
      */
     public static void main(String[] args) {
