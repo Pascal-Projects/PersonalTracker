@@ -1,23 +1,41 @@
+/*
+    * Sets the color of the bars that represent the Hours of sleeping
+ */
 .default-color0.chart-bar, .default-color0.chart-legend-item-symbol {
     -fx-bar-fill: #e2059cff;
 }
 
+/*
+    * Sets the color of the bars that represent the Liters of water drank
+ */
 .default-color1.chart-bar, .default-color1.chart-legend-item-symbol {
     -fx-bar-fill: #5300ffff;
 }
 
+/*
+    * Sets a transparent background for the chart and the legend
+ */
 .chart-legend, .chart-plot-background {
     -fx-background-color: transparent;
 }
 
+/*
+    * Sets the horizontal grid lines to be transparent
+ */
 .chart-vertical-grid-lines {
     -fx-stroke: transparent;
 }
 
+/*
+    * Sets the font color of the chart title, the axis labels and the legend labels to white
+ */
 .chart-title, .axis-label, .chart-legend-item {
     -fx-text-fill: #ffffff;
 }
 
+/*
+    * Sets the background color to black
+ */
 #pane {
     -fx-background-color: #222222;
 }
