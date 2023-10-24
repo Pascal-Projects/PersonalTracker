@@ -1,0 +1,23 @@
+.default-color0.chart-bar, .default-color0.chart-legend-item-symbol {
+    -fx-bar-fill: #e2059cff;
+}
+
+.default-color1.chart-bar, .default-color1.chart-legend-item-symbol {
+    -fx-bar-fill: #5300ffff;
+}
+
+.chart-legend, .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+
+.chart-title, .axis-label, .chart-legend-item {
+    -fx-text-fill: #ffffff;
+}
+
+#pane {
+    -fx-background-color: #222222;
+}
