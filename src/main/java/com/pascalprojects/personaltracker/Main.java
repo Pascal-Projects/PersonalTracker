@@ -2,28 +2,26 @@ package com.pascalprojects.personaltracker;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Objects;
 
 public class Main extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) {
 
         TextInputDialog tdw = new TextInputDialog();
         tdw.setHeaderText("Enter the amount of water you drank today");
@@ -83,7 +81,7 @@ public class Main extends Application {
 
     public BarChart<String, Number> createChart() {
         CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")));
+        xAxis.setCategories(FXCollections.observableArrayList(Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")));
         xAxis.setLabel("Day");
 
         NumberAxis yAxis = new NumberAxis();
@@ -92,15 +90,13 @@ public class Main extends Application {
         BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
         barChart.setTitle("Personal Tracker");
 
-        addData(barChart);
-
         barChart.setLegendVisible(true);
         barChart.setLegendSide(javafx.geometry.Side.BOTTOM);
 
-        return barChart;
+        return addData(barChart);
     }
 
-    public BarChart addData(BarChart pBarchart) {
+    public BarChart<String, Number> addData(BarChart<String, Number> pBarchart) {
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();
         series1.setName("Hours of sleep");
         series1.getData().add(new XYChart.Data<>("Monday", 8));
@@ -121,7 +117,8 @@ public class Main extends Application {
         series2.getData().add(new XYChart.Data<>("Saturday", 1));
         series2.getData().add(new XYChart.Data<>("Sunday", 4));
 
-        pBarchart.getData().addAll(series1, series2);
+        pBarchart.getData().add(0, series1);
+        pBarchart.getData().add(1, series2);
         return pBarchart;
     }
 
