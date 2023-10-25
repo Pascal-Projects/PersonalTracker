@@ -4,7 +4,7 @@ target/
 !**/src/test/**/target/
 
 ### SQL
-/src/main/resources/db/credentials.txt
+*.txt
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
